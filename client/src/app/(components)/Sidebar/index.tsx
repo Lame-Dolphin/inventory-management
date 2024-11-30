@@ -15,6 +15,7 @@ import {
   User,
   Workflow
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -78,7 +79,7 @@ const Sidebar = () => {
           isSidebarCollapsed ? "px-5" : "px-8"
         }`}
       >
-        <img
+        <Image
           src="https://s3-inventorymanagement.s3.us-east-2.amazonaws.com/logo.png"
           alt="AceZone-logo"
           width={27}

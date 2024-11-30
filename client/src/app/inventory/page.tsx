@@ -5,7 +5,7 @@ import Header from "@/app/(components)/Header";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
 const columns: GridColDef[] = [
-  { field: "productId", headerName: "Product ID", width: 90 },
+  { field: "productId", headerName: "ID", width: 90 },
   { field: "name", headerName: "Product Name", width: 200 },
   {
     field: "price",
@@ -29,7 +29,7 @@ const columns: GridColDef[] = [
   }
 ];
 
-const inventory = () => {
+const Inventory = () => {
   const { data: products, isError, isLoading } = useGetProductsQuery();
 
   if (isLoading) {
@@ -37,7 +37,11 @@ const inventory = () => {
   }
 
   if (isError || !products) {
-    return <div className="py-4 text-center text-red-500"></div>;
+    return (
+      <div className="py-4 text-center text-red-500">
+        Failed to fetch products
+      </div>
+    );
   }
 
   return (
@@ -48,10 +52,10 @@ const inventory = () => {
         columns={columns}
         getRowId={(row) => row.productId}
         checkboxSelection
-        className="mt-5 rounded-lg border border-gray-200 bg-white text-gray-700 shadow"
+        className="mt-5 rounded-lg border border-gray-200 bg-white !text-gray-700 shadow"
       />
     </div>
   );
 };
 
-export default inventory;
+export default Inventory;

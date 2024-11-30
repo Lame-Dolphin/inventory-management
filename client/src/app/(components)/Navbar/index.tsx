@@ -69,8 +69,16 @@ const Navbar = () => {
           </div>
           <hr className="mx-3 h-7 w-0 border border-l border-solid border-gray-300" />
           <div className="flex cursor-pointer items-center gap-3">
-            <div className="h-9 w-9">Image</div>
-            <span className="font-semibold"> First Name</span>
+            <div className="h-9 w-9">
+              <Image
+                src="https://s3-inventorymanagement.s3.us-east-2.amazonaws.com/profile.jpg"
+                alt="Profile"
+                width={50}
+                height={50}
+                className="h-full rounded-full object-cover"
+              />
+            </div>
+            <span className="font-semibold">First Name</span>
           </div>
         </div>
         <Link href="/settings">
